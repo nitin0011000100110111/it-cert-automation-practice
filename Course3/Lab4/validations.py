@@ -2,8 +2,9 @@
 
 import re
 
-def validate_user(username, minlen):
+def validate_user(username):
     """Checks if the received username matches the required conditions."""
+    minlen = len(username)
     if type(username) != str:
         raise TypeError("username must be a string")
     if minlen < 1:
@@ -19,6 +20,5 @@ def validate_user(username, minlen):
     if not username[0].isalpha():
         return False
     return True
-
-
-
+name = input()
+print(validate_user(name))
